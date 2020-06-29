@@ -18,7 +18,7 @@ const initialState = localStorage.getItem("formData")
       },
       {
         value: "",
-        name: "date",
+        name: "birthdate",
       },
       {
         value: "",

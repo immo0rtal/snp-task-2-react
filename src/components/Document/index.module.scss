@@ -2,7 +2,6 @@
 
 .content {
   width: 48%;
-  height: 100%;
   box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
   padding: 55px 55px 90px 55px;
   display: flex;
@@ -12,6 +11,7 @@
   @include laptopL {
     width: 100%;
     margin-top: 20px;
+    height: 100%;
   }
 
   @include mobileL {

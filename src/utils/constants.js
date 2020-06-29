@@ -8,7 +8,7 @@ export const errors = {
   fullname: "Invalid fullname. Lenth more 21 symbols",
   email: "Invalid email. Please use a@mail.ru",
   phone: "Please use +7|8 *** *** ** ** format",
-  date: "Invalid date. Please use dd.mm.yyyy format",
+  birthdate: "Invalid date. Please use dd.mm.yyyy format",
   message: "Invalid message. Lenth more 486 symbols",
 };
 
@@ -16,6 +16,6 @@ export const placeholders = {
   fullname: "Enter your name",
   email: "Enter your email",
   phone: "Enter your phone number",
-  date: "Enter date",
+  birthdate: "Enter date",
   message: "Your message here",
 };

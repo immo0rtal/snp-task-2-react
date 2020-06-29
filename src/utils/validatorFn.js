@@ -5,7 +5,7 @@ const validatorFnProperties = {
   fullname: (value) => value.length <= 21,
   email: (value) => !value.length || value.match(emailRegex),
   phone: (value) => !value.length || value.match(phoneRegex),
-  date: (value) => !value.length || value.match(dateRegex),
+  birthdate: (value) => !value.length || value.match(dateRegex),
   message: (value) => value.length <= 483,
 };
 
