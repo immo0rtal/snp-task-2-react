@@ -7,8 +7,8 @@ export const dateRegex = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(
 export const errors = {
   fullname: "Invalid fullname. Lenth more 21 symbols",
   email: "Invalid email. Please use a@mail.ru",
-  phone: "Please use +7|8 *** *** ** **",
-  date: "Invalid date. Please use dd.mm.yyyy",
+  phone: "Please use +7|8 *** *** ** ** format",
+  date: "Invalid date. Please use dd.mm.yyyy format",
   message: "Invalid message. Lenth more 486 symbols",
 };
 

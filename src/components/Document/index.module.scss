@@ -1,3 +1,5 @@
+@import "#/styles/breakpoints.module.scss";
+
 .content {
   width: 48%;
   height: 100%;
@@ -6,10 +8,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @include laptopL {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  @include mobileL {
+    padding: 30px 30px 90px 30px;
+  }
 }
 
 .image {
   max-width: 256px;
+
+  @include mobileL {
+    max-width: 126px;
+  }
 }
 
 .text {
@@ -22,9 +37,17 @@
   font-family: "Roboto";
   line-height: 30px;
   font-weight: 500;
+
+  @include mobileL {
+    font-size: 15px;
+  }
 }
 
 .title {
   font-size: 20px;
   font-weight: 600;
+
+  @include mobileL {
+    font-size: 15px;
+  }
 }

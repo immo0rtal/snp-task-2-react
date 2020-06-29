@@ -34,7 +34,7 @@ const TextInput = (props) => {
           />
         )}
         {!isValid && (
-          <span style={{ color: "red" }}>{getError(data.name)}</span>
+          <span style={{ color: "red", fontSize: "11px" }}>{getError(data.name)}</span>
         )}
       </div>
     );

@@ -1,6 +1,18 @@
+@import "#/styles/breakpoints.module.scss";
+
 .content {
-  height: 1000px;
+  height: 100%;
   padding: 50px;
   display: flex;
   justify-content: space-between;
+
+  @include laptopL {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  @include tablet {
+    padding: 0px;
+  }
 }

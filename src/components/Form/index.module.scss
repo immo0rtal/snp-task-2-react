@@ -1,4 +1,5 @@
 @import "#/styles/colors.module.scss";
+@import "#/styles/breakpoints.module.scss";
 
 .content {
   height: 100%;
@@ -6,6 +7,14 @@
   box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
   padding: 55px 55px 90px 55px;
   font-family: "Roboto";
+
+  @include laptopL {
+    width: 100%;
+  }
+
+  @include mobileL {
+    padding: 30px 30px 90px 30px;
+  }
 }
 
 .form {
@@ -25,6 +34,11 @@
   padding-bottom: 40px;
   font-weight: bold;
   font-family: "Roboto";
+
+  @include mobileL {
+    font-size: 25px;
+    padding-bottom: 20px;
+  }
 }
 
 .button {
@@ -42,6 +56,11 @@
   cursor: pointer;
   transition: all 0.4s;
   font-family: "Roboto";
+
+  @include mobileL {
+    font-size: 13px;
+    height: 30px;
+  }
 }
 
 .button:hover {
