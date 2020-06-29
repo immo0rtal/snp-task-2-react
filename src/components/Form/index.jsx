@@ -31,9 +31,10 @@ const Form = () => {
   ]);
 
   const handleInputChange = React.useCallback(
-    (index, event) => {
+    (event) => {
       const nextData = [...data];
       const { value } = event.target;
+      const { index } = event.target.dataset;
       nextData[index] = { ...nextData[index], value: value };
       setData(nextData);
       dispatch(changeField({ value, index }));
@@ -46,7 +47,8 @@ const Form = () => {
       <TextInput
         key={index}
         data={input}
-        onChange={(e) => handleInputChange(index, e)}
+        index={index}
+        onChange={handleInputChange}
       />
     ));
   }, [formData, handleInputChange]);

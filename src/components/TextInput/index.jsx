@@ -4,7 +4,7 @@ import { validatorFn, getError } from "#/utils/validatorFn";
 import { placeholders } from "#/utils/constants";
 
 const TextInput = (props) => {
-  const { data, onChange } = props;
+  const { data, onChange, index } = props;
 
   const getPlaceholder = React.useCallback(() => {
     return placeholders[data.name];
@@ -18,6 +18,7 @@ const TextInput = (props) => {
         <span className={style["label-input"]}>{data.name}*</span>
         {data.isTextArea ? (
           <textarea
+            data-index={index}
             value={data.value}
             onChange={onChange}
             className={style["form-textarea"]}
@@ -25,6 +26,7 @@ const TextInput = (props) => {
           ></textarea>
         ) : (
           <input
+            data-index={index}
             value={data.value}
             onChange={onChange}
             className={style["form-input"]}
@@ -34,11 +36,13 @@ const TextInput = (props) => {
           />
         )}
         {!isValid && (
-          <span style={{ color: "red", fontSize: "11px" }}>{getError(data.name)}</span>
+          <span style={{ color: "red", fontSize: "11px" }}>
+            {getError(data.name)}
+          </span>
         )}
       </div>
     );
-  }, [data, onChange, getPlaceholder]);
+  }, [data, onChange, getPlaceholder, index]);
 
   return <>{_inputTypes}</>;
 };
