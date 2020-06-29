@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/snp-task-2-react/static/css/main.d8fbab31.chunk.css",
+    "main.css": "/snp-task-2-react/static/css/main.433da8f2.chunk.css",
     "main.js": "/snp-task-2-react/static/js/main.671c3534.chunk.js",
     "main.js.map": "/snp-task-2-react/static/js/main.671c3534.chunk.js.map",
     "runtime-main.js": "/snp-task-2-react/static/js/runtime-main.5778b798.js",
@@ -8,9 +8,9 @@
     "static/js/2.decbfb8a.chunk.js": "/snp-task-2-react/static/js/2.decbfb8a.chunk.js",
     "static/js/2.decbfb8a.chunk.js.map": "/snp-task-2-react/static/js/2.decbfb8a.chunk.js.map",
     "index.html": "/snp-task-2-react/index.html",
-    "precache-manifest.4f7cb6c7c468788908d6bb5801157867.js": "/snp-task-2-react/precache-manifest.4f7cb6c7c468788908d6bb5801157867.js",
+    "precache-manifest.d6baf95021aeaf16ea9fbd24fb9ba16a.js": "/snp-task-2-react/precache-manifest.d6baf95021aeaf16ea9fbd24fb9ba16a.js",
     "service-worker.js": "/snp-task-2-react/service-worker.js",
-    "static/css/main.d8fbab31.chunk.css.map": "/snp-task-2-react/static/css/main.d8fbab31.chunk.css.map",
+    "static/css/main.433da8f2.chunk.css.map": "/snp-task-2-react/static/css/main.433da8f2.chunk.css.map",
     "static/js/2.decbfb8a.chunk.js.LICENSE.txt": "/snp-task-2-react/static/js/2.decbfb8a.chunk.js.LICENSE.txt",
     "static/media/index.css": "/snp-task-2-react/static/media/Roboto-Black.5ebb24ee.ttf",
     "static/media/noAvatar1.png": "/snp-task-2-react/static/media/noAvatar1.87f1860d.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.5778b798.js",
     "static/js/2.decbfb8a.chunk.js",
-    "static/css/main.d8fbab31.chunk.css",
+    "static/css/main.433da8f2.chunk.css",
     "static/js/main.671c3534.chunk.js"
   ]
 }
