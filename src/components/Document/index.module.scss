@@ -1,0 +1,30 @@
+.content {
+  width: 48%;
+  height: 100%;
+  box-shadow: 0 0 10px 5px rgba(221, 221, 221, 1);
+  padding: 62px 55px 90px 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  max-width: 256px;
+}
+
+.text {
+  align-items: left;
+  margin-top: 35px;
+  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  word-wrap: break-word;
+  font-family: "Roboto";
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
