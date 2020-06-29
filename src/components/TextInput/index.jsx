@@ -1,10 +1,17 @@
 import React from "react";
 import style from "./index.module.scss";
+import { validatorFn, getError } from "#/utils/validatorFn";
+import { placeholders } from "#/utils/constants";
 
 const TextInput = (props) => {
   const { data, onChange } = props;
+
+  const getPlaceholder = React.useCallback(() => {
+    return placeholders[data.name];
+  }, [data]);
+
   const _inputTypes = React.useMemo(() => {
-    const isValid = data.validatorFn(data.value);
+    const isValid = validatorFn(data.name, data.value);
 
     return (
       <div className={`${style[`${data.name}`]} ${style["name"]}`}>
@@ -14,7 +21,7 @@ const TextInput = (props) => {
             value={data.value}
             onChange={onChange}
             className={style["form-textarea"]}
-            placeholder={`${data.placeholder}`}
+            placeholder={getPlaceholder(data.name)}
           ></textarea>
         ) : (
           <input
@@ -22,16 +29,16 @@ const TextInput = (props) => {
             onChange={onChange}
             className={style["form-input"]}
             type="text"
-            placeholder={`${data.placeholder}`}
+            placeholder={getPlaceholder(data.name)}
             required
           />
         )}
         {!isValid && (
-          <span style={{ color: "red" }}>{data.validatorErrorMessage}</span>
+          <span style={{ color: "red" }}>{getError(data.name)}</span>
         )}
       </div>
     );
-  }, [data, onChange]);
+  }, [data, onChange, getPlaceholder]);
 
   return <>{_inputTypes}</>;
 };

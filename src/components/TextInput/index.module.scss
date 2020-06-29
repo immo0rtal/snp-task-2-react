@@ -1,7 +1,9 @@
+@import "#/styles/colors.module.scss";
+
 .name {
   width: 100%;
   position: relative;
-  border: 1px solid #e6e6e6;
+  border: 1px solid $border-color;
   border-radius: 13px;
   padding: 10px 30px 9px 22px;
   position: relative;
@@ -10,23 +12,27 @@
 
 .email {
   width: 49%;
-  background: #f7f7f7;
+  height: 94px;
+  background: $form-element-background;
   font-family: "Roboto";
 }
 
 .phone {
   width: 49%;
-  background: #f7f7f7;
+  height: 94px;
+  background: $form-element-background;
   font-family: "Roboto";
 }
 
 .fullname {
-  background: #f7f7f7;
+  height: 94px;
+  background: $form-element-background;
   font-family: "Roboto";
 }
 
 .date {
-  background: #f7f7f7;
+  height: 94px;
+  background: $form-element-background;
   font-family: "Roboto";
 }
 
@@ -37,7 +43,7 @@
 
 .label-input {
   font-size: 10px;
-  color: #393939;
+  color: $dark-gray;
   line-height: 1.5;
   text-transform: uppercase;
 }
@@ -48,7 +54,7 @@
   width: 100%;
   background: transparent;
   font-size: 18px;
-  color: #555555;
+  color: $gray;
   line-height: 1.2;
   padding-right: 15px;
 }
@@ -63,7 +69,7 @@
   min-width: 100%;
   background: transparent;
   font-size: 18px;
-  color: #555555;
+  color: $gray;
   line-height: 1.2;
   padding-right: 15px;
 }

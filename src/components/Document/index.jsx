@@ -10,7 +10,7 @@ const Document = () => {
     return form.map((info, index) => (
       <div key={index} className={style["text"]}>
         <div className={style["title"]}>
-          {info.name} {info.value || "-"}
+          {info.name}: {info.value || "-"}
         </div>
       </div>
     ));
