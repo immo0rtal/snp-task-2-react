@@ -5,7 +5,7 @@ import Form from "#/components/Form";
 
 const App = () => {
   return (
-    <div className={style.content}>
+    <div className={style["content"]}>
       <Form />
       <Document />
     </div>
