@@ -13,6 +13,20 @@ const Form = () => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);
 
+  const valid = React.useMemo(() => {
+    return Object.values(formData).some((text) => !text);
+  }, [formData]);
+
+  const [isValid, setIsValid] = React.useState(valid);
+
+  const handleFormSubmit = React.useCallback(
+    (event) => {
+      event.preventDefault();
+      setIsValid(valid);
+    },
+    [valid]
+  );
+
   const handleInputChange = React.useCallback(
     (event) => {
       const { value } = event.target;
@@ -35,12 +49,17 @@ const Form = () => {
 
   return (
     <div className={style["content"]}>
-      <form className={style["form"]}>
+      <form className={style["form"]} onSubmit={handleFormSubmit} noValidate>
         <div className={style["title"]}>Contact us</div>
         {_renderInput}
         <button type="submit" className={style["button"]}>
           Submit
         </button>
+        {isValid && (
+          <span style={{ color: "red", fontSize: "11px", marginTop: "10px" }}>
+            not all fields are filled
+          </span>
+        )}
       </form>
     </div>
   );
