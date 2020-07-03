@@ -19,3 +19,5 @@ export const placeholders = {
   birthdate: "Enter date",
   message: "Your message here",
 };
+
+export const fields = ["fullname", "email", "phone", "birthdate", "message"];

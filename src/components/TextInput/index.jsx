@@ -4,45 +4,45 @@ import { validatorFn, getError } from "#/utils/validatorFn";
 import { placeholders } from "#/utils/constants";
 
 const TextInput = (props) => {
-  const { data, onChange, index } = props;
+  const { name, data, onChange } = props;
 
   const getPlaceholder = React.useCallback(() => {
-    return placeholders[data.name];
-  }, [data]);
+    return placeholders[name];
+  }, [name]);
 
   const _inputTypes = React.useMemo(() => {
-    const isValid = validatorFn(data.name, data.value);
+    const isValid = validatorFn(name, data[name]);
 
     return (
-      <div className={`${style[`${data.name}`]} ${style["name"]}`}>
-        <span className={style["label-input"]}>{data.name}*</span>
-        {data.isTextArea ? (
+      <div className={`${style[`${name}`]} ${style["name"]}`}>
+        <span className={style["label-input"]}>{name}*</span>
+        {name === "message" ? (
           <textarea
-            data-index={index}
-            value={data.value}
+            data-name={name}
+            value={data[name]}
             onChange={onChange}
             className={style["form-textarea"]}
-            placeholder={getPlaceholder(data.name)}
+            placeholder={getPlaceholder(name)}
           ></textarea>
         ) : (
           <input
-            data-index={index}
-            value={data.value}
+            data-name={name}
+            value={data[name]}
             onChange={onChange}
             className={style["form-input"]}
             type="text"
-            placeholder={getPlaceholder(data.name)}
+            placeholder={getPlaceholder(name)}
             required
           />
         )}
         {!isValid && (
           <span style={{ color: "red", fontSize: "11px" }}>
-            {getError(data.name)}
+            {getError(name)}
           </span>
         )}
       </div>
     );
-  }, [data, onChange, getPlaceholder, index]);
+  }, [data, onChange, getPlaceholder, name]);
 
   return <>{_inputTypes}</>;
 };

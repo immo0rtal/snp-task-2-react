@@ -3,51 +3,31 @@ import style from "./index.module.scss";
 import TextInput from "#/components/TextInput";
 import { useDispatch, useSelector } from "react-redux";
 import { changeField } from "#/store/actions/form";
+import { fields } from "#/utils/constants";
 
 const Form = () => {
   const dispatch = useDispatch();
-  const formData = useSelector((state) => state.form);
+  const formData = useSelector((state) => state.form.formFields);
 
   React.useEffect(() => {
     localStorage.setItem("formData", JSON.stringify(formData));
   }, [formData]);
 
-  const [data, setData] = React.useState([
-    {
-      value: "",
-    },
-    {
-      value: "",
-    },
-    {
-      value: "",
-    },
-    {
-      value: "",
-    },
-    {
-      value: "",
-    },
-  ]);
-
   const handleInputChange = React.useCallback(
     (event) => {
-      const nextData = [...data];
       const { value } = event.target;
-      const { index } = event.target.dataset;
-      nextData[index] = { ...nextData[index], value: value };
-      setData(nextData);
-      dispatch(changeField({ value, index }));
+      const { name } = event.target.dataset;
+      dispatch(changeField({ value, name }));
     },
-    [data, dispatch]
+    [dispatch]
   );
 
   const _renderInput = React.useMemo(() => {
-    return formData.map((input, index) => (
+    return fields.map((name, index) => (
       <TextInput
         key={index}
-        data={input}
-        index={index}
+        name={name}
+        data={formData}
         onChange={handleInputChange}
       />
     ));
