@@ -32,7 +32,6 @@ const TextInput = (props) => {
             className={style["form-textarea"]}
             placeholder={getPlaceholder(name)}
             onBlur={handleOnInputBlur}
-            required
           ></textarea>
         ) : (
           <input
@@ -43,7 +42,6 @@ const TextInput = (props) => {
             type="text"
             onBlur={handleOnInputBlur}
             placeholder={getPlaceholder(name)}
-            required
           />
         )}
         {!isValid && (

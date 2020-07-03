@@ -17,12 +17,12 @@ const Form = () => {
     return Object.values(formData).some((text) => !text);
   }, [formData]);
 
-  const [isValid, setIsValid] = React.useState(valid);
+  const [isNotValid, setIsNotValid] = React.useState(valid);
 
   const handleFormSubmit = React.useCallback(
     (event) => {
       event.preventDefault();
-      setIsValid(valid);
+      setIsNotValid(valid);
     },
     [valid]
   );
@@ -49,13 +49,13 @@ const Form = () => {
 
   return (
     <div className={style["content"]}>
-      <form className={style["form"]} onSubmit={handleFormSubmit} noValidate>
+      <form className={style["form"]} onSubmit={handleFormSubmit}>
         <div className={style["title"]}>Contact us</div>
         {_renderInput}
         <button type="submit" className={style["button"]}>
           Submit
         </button>
-        {isValid && (
+        {isNotValid && (
           <span style={{ color: "red", fontSize: "11px", marginTop: "10px" }}>
             not all fields are filled
           </span>
