@@ -10,9 +10,17 @@ const TextInput = (props) => {
     return placeholders[name];
   }, [name]);
 
-  const _inputTypes = React.useMemo(() => {
-    const isValid = validatorFn(name, data[name]);
+  const valid = React.useMemo(() => {
+    return validatorFn(name, data[name]);
+  }, [name, data]);
 
+  const [isValid, setIsValid] = React.useState(valid);
+
+  const handleOnInputBlur = React.useCallback(() => {
+    setIsValid(valid);
+  }, [valid]);
+
+  const _inputTypes = React.useMemo(() => {
     return (
       <div className={`${style[`${name}`]} ${style["name"]}`}>
         <span className={style["label-input"]}>{name}*</span>
@@ -23,6 +31,7 @@ const TextInput = (props) => {
             onChange={onChange}
             className={style["form-textarea"]}
             placeholder={getPlaceholder(name)}
+            onBlur={handleOnInputBlur}
           ></textarea>
         ) : (
           <input
@@ -31,8 +40,8 @@ const TextInput = (props) => {
             onChange={onChange}
             className={style["form-input"]}
             type="text"
+            onBlur={handleOnInputBlur}
             placeholder={getPlaceholder(name)}
-            required
           />
         )}
         {!isValid && (
@@ -42,7 +51,7 @@ const TextInput = (props) => {
         )}
       </div>
     );
-  }, [data, onChange, getPlaceholder, name]);
+  }, [data, onChange, getPlaceholder, name, handleOnInputBlur, isValid]);
 
   return <>{_inputTypes}</>;
 };
